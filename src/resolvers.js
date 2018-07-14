@@ -19,6 +19,9 @@ module.exports = {
         },
         info
       );
+    },
+    carts: (_, args, context, info) => {
+      return context.prisma.query.carts(null, info);
     }
   }
   // Mutation: {

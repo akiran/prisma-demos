@@ -4,8 +4,8 @@
 
 type Query {
   user(id: ID!): User
-  products(searchString: String): [Product!]!
-  # carts: [Cart!]!
+  products(searchString: String): [Product]
+  carts: [Cart]
 }
 
 # type Mutation {
