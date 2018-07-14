@@ -23,19 +23,21 @@ module.exports = {
     carts: (_, args, context, info) => {
       return context.prisma.query.carts(null, info);
     }
+  },
+  Mutation: {
+    createCart: (_, args, context, info) => {
+      return context.prisma.mutation.createCart(
+        {
+          data: { product: { connect: { id: args.productId } } }
+        },
+        info
+      );
+    },
+    deleteCart: (_, args, context, info) => {
+      return context.prisma.mutation.deleteCart(
+        { where: { id: args.id } },
+        info
+      );
+    }
   }
-  // Mutation: {
-  //   createDraft: (_, args, context, info) => {
-  //     // ...
-  //   },
-  //   publish: (_, args, context, info) => {
-  //     // ...
-  //   },
-  //   deletePost: (_, args, context, info) => {
-  //     // ...
-  //   },
-  //   signup: (_, args, context, info) => {
-  //     // ...
-  //   }
-  // }
 };

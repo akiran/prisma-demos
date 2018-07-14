@@ -8,7 +8,7 @@ type Query {
   carts: [Cart]
 }
 
-# type Mutation {
-#   createCart(productId: ID!): Cart
-#   deleteCart(id: ID!): Cart
-# }
+type Mutation {
+  createCart(productId: ID!): Cart
+  deleteCart(id: ID!): Cart
+}
